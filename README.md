@@ -2,6 +2,31 @@
 
 Repositorio con el código solución a la prueba con la que se finaliza el módulo número 6 **Desarrollo de aplicaciones web con Node y Express** de la beca **Desarrollo de aplicaciones Full Stack Javascript Trainee** dictada por Desafío Latam
 
+- [Solución a la prueba Club deportivo](#solución-a-la-prueba-club-deportivo)
+  - [Requisitos](#requisitos)
+  - [Proyecto Finalizado: Diagrama de Flujo](#proyecto-finalizado-diagrama-de-flujo)
+    - [1-Página de Inicio](#1-página-de-inicio)
+    - [2- Página para crear,editar y eliminar deportes](#2--página-para-creareditar-y-eliminar-deportes)
+    - [3- Página de lectura de datos sin datos](#3--página-de-lectura-de-datos-sin-datos)
+    - [4- Ruta de edición sin parámetros](#4--ruta-de-edición-sin-parámetros)
+    - [5- Ruta de edición con parámetro pero sin data](#5--ruta-de-edición-con-parámetro-pero-sin-data)
+    - [6- Ruta de eliminación sin parámetros](#6--ruta-de-eliminación-sin-parámetros)
+    - [7- Ruta de eliminación con parámetro pero sin data](#7--ruta-de-eliminación-con-parámetro-pero-sin-data)
+    - [8- Creación de deporte exitosa](#8--creación-de-deporte-exitosa)
+    - [9- Lectura de deportes](#9--lectura-de-deportes)
+    - [10- Edición de deporte](#10--edición-de-deporte)
+    - [11-Edición de deporte exitosa](#11-edición-de-deporte-exitosa)
+    - [12-Lectura de deporte editado](#12-lectura-de-deporte-editado)
+    - [13-Eliminación de deporte exitosa](#13-eliminación-de-deporte-exitosa)
+    - [14-Ruta Desconocida](#14-ruta-desconocida)
+  - [Librerias utilizadas](#librerias-utilizadas)
+  - [Soluciones](#soluciones)
+    - [1.Crear una ruta que reciba el nombre y precio de un nuevo deporte, lo persista en un archivo JSON (3 Puntos)](#1crear-una-ruta-que-reciba-el-nombre-y-precio-de-un-nuevo-deporte-lo-persista-en-un-archivo-json-3-puntos)
+    - [2.Crear una ruta que al consultarse devuelva en formato JSON todos los deportes registrados (2 Puntos)](#2crear-una-ruta-que-al-consultarse-devuelva-en-formato-json-todos-los-deportes-registrados-2-puntos)
+    - [3.Crear una ruta que edite el precio de un deporte registrado utilizando los parámetros de la consulta y persista este cambio (2 Puntos)](#3crear-una-ruta-que-edite-el-precio-de-un-deporte-registrado-utilizando-los-parámetros-de-la-consulta-y-persista-este-cambio-2-puntos)
+    - [4.Crear una ruta que elimine un deporte solicitado desde el cliente y persista este cambio (3 Puntos)](#4crear-una-ruta-que-elimine-un-deporte-solicitado-desde-el-cliente-y-persista-este-cambio-3-puntos)
+    - [¡¡EXTRA!!: Eliminación de archivo deportes.json cada 5 minutos](#extra-eliminación-de-archivo-deportesjson-cada-5-minutos)
+
 ## Requisitos
 
 ![Requisitos](./screenshots/requisitos_prueba.webp)
