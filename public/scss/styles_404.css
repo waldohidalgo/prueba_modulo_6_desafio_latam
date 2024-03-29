@@ -1,0 +1,51 @@
+.message-icon-wrapper {
+  width: 186px;
+}
+
+.message-icon {
+  width: 100%;
+}
+
+.message-block__content {
+  width: 272px;
+}
+.message-block__main-text {
+  color: black;
+  font-family: "Acme", sans-serif;
+  font-size: 96px;
+  margin-bottom: 22px;
+}
+.message-block__text {
+  color: black;
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.message-block__link {
+  color: blue;
+  display: inline-block;
+}
+.message-block__link:hover,
+.message-block__link:focus {
+  color: blue;
+  transition: all 0.3s ease-in;
+}
+.message-block__link:hover svg,
+.message-block__link:focus svg {
+  fill: blue;
+  transition: all 0.3s ease-in;
+}
+.message-block__link-icon {
+  display: inline-block;
+  margin-right: 8px;
+}
+.message-block__link-icon svg {
+  fill: blue;
+}
+.message-block__link-text {
+  display: inline-block;
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+} /*# sourceMappingURL=styles_404.css.map */

@@ -1,0 +1,369 @@
+//Text
+$base__font-size: 16px;
+$base__line: 24px;
+
+$font-family-sans-fallback: "Arial", sans-serif;
+$font-family-sans: "Source Sans Pro", "Helvetica Neue", "Helvetica",
+  $font-family-sans-fallback;
+$font-family--PT-Sans: "PT Sans", sans-serif;
+$font-family--Acme: "Acme", sans-serif;
+
+$font-family--primary: $font-family--PT-Sans;
+$font-family--secondary: $font-family--Acme;
+
+//Colors
+$white: #fff;
+$black: #000;
+$yellow: #fdca40;
+
+//Breakpoints
+$sm-device: 576px;
+$md-device: 768px;
+$lg-device: 992px;
+$xl-device: 1200px;
+
+//Color Palette
+$palettes: (
+  gray-shades: (
+    base: #99a4ae,
+    dark: #677d88,
+    light: #f1f4f8,
+  ),
+);
+
+//Font size variables
+$default-font-size: $base__font-size - 2px;
+$font-size--sm: 12px;
+$font-size--md: 16px;
+$font-size--lg: 20px;
+$font-size--xlg: 96px;
+
+//Color Usage
+$primary-color: $yellow;
+
+// Font weights
+$font-weight--regular: 400;
+$font-weight--bold: 700;
+
+//BEM(Block Element Modifier) Naming Convention
+// For Element
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+// For Modifier
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+// Use color palette
+@function palette($palette, $shade: base) {
+  @return map-get(map-get($palettes, $palette), $shade);
+}
+
+// Media Queries
+@mixin mq($break) {
+  @if $break == "xs" {
+    //lowest breakpoint value
+    @content;
+  } @else if $break == "sm" {
+    // phone
+    @media (min-width: $sm-device) {
+      @content;
+    }
+  } @else if $break == "md" {
+    // tablet
+    @media (min-width: $md-device) {
+      @content;
+    }
+  } @else if $break == "lg" {
+    // laptop and desktop
+    @media (min-width: $lg-device) {
+      @content;
+    }
+  } @else if $break == "xl" {
+    // High res desktop and TVs
+    @media (min-width: $xl-device) {
+      @content;
+    }
+  } @else {
+    @error "No value could be retrieved for '#{$break}'";
+  }
+}
+
+%clearfix-none {
+  display: inherit;
+}
+.left {
+  float: left !important;
+}
+.right {
+  float: right !important;
+}
+// Reset CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // Global Clearfixing
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+// Base Code
+html,
+body {
+  height: 100%;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family--primary;
+  text-rendering: optimizeLegibility;
+}
+a {
+  outline: none;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a,
+span,
+strong {
+  &:after {
+    @extend %clearfix-none;
+  }
+}
+ul,
+ol {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family--primary;
+  margin: 0;
+}
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.main-container-wrapper {
+  height: 100%;
+  min-width: 768px;
+  overflow: auto;
+}
+
+header {
+  background-color: $primary-color;
+  -moz-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}
+
+.header {
+  @include m(left) {
+    width: 70%;
+  }
+}
+
+.btn {
+  background: rgba(0, 0, 0, 0.1);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: $font-family--primary;
+  height: 34px;
+  outline: none;
+  text-align: center;
+  width: 34px;
+  vertical-align: middle;
+
+  &:hover,
+  &:focus {
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in;
+  }
+
+  .icon {
+    font-size: $default-font-size;
+  }
+}
+
+.form-control {
+  background: transparent;
+  border: 0;
+  display: block;
+  font-family: $font-family--primary;
+  font-size: $default-font-size;
+  line-height: 1;
+  outline: none;
+  width: 100%;
+}
+
+.menu-btn {
+  margin: 3px 16px 0 0;
+}
+
+.menu-icon {
+  width: 14px;
+}
+
+.notification-btn {
+  color: palette(gray-shades, light);
+  margin-right: 16px;
+}
+
+.profile-btn {
+  color: palette(gray-shades, light);
+}
+
+.logo-wrapper {
+  display: inline-block;
+  margin-right: 24px;
+  width: 37px;
+}
+
+.logo {
+  width: 100%;
+}
+
+.search {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  height: 34px;
+  margin-top: 3px;
+  position: relative;
+  width: calc(100% - 112px);
+
+  @include mq(lg) {
+    width: 568px;
+  }
+
+  @include mq(xl) {
+    width: 600px;
+  }
+
+  &::before {
+    color: palette(gray-shades, light);
+    content: "\f4a4";
+    font-family: "Ionicons";
+    font-size: $font-size--sm;
+    position: absolute;
+    top: 11px;
+    left: 16px;
+    z-index: 10;
+  }
+
+  @include e(input) {
+    color: $white;
+    padding: 0 16px 0 56px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    &::-webkit-input-placeholder {
+      color: palette(gray-shades, light);
+    }
+
+    &::-moz-placeholder {
+      color: palette(gray-shades, light);
+    }
+
+    &:-ms-input-placeholder {
+      color: palette(gray-shades, light);
+    }
+  }
+}
+
+main {
+  height: calc(100% - 64px);
+  min-height: 400px;
+  overflow: auto;
+  position: relative;
+}
+
+.message-icon-wrapper {
+  display: inline-block;
+  width: 186px;
+}
+
+.message-icon {
+  width: 100%;
+}
+
+.message-block {
+  width: 516px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -ms-transform: translate(50%, -50%);
+  -webkit-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+
+  @include e(content) {
+    width: 272px;
+  }
+
+  @include e(main-text) {
+    color: palette(gray-shades, base);
+    font-family: $font-family--secondary;
+    font-size: $font-size--xlg;
+    margin-bottom: 22px;
+  }
+
+  @include e(text) {
+    color: palette(gray-shades, dark);
+    font-family: $font-family--primary;
+    font-size: $font-size--lg;
+    margin-bottom: 12px;
+  }
+
+  @include e(link) {
+    color: $primary-color;
+    display: inline-block;
+
+    &:hover,
+    &:focus {
+      color: darken($primary-color, 15%);
+      -webkit-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+
+      svg {
+        fill: darken($primary-color, 15%);
+        -webkit-transition: all 0.3s ease-in;
+        transition: all 0.3s ease-in;
+      }
+    }
+  }
+
+  @include e(link-icon) {
+    display: inline-block;
+    margin-right: 8px;
+
+    svg {
+      fill: #fdca40;
+    }
+  }
+
+  @include e(link-text) {
+    display: inline-block;
+    font-family: $font-family--primary;
+    font-size: $font-size--md;
+    font-weight: $font-weight--bold;
+    line-height: 1;
+  }
+}
