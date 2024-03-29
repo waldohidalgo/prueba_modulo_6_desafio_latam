@@ -27,10 +27,10 @@ function getData() {
             <td class="td_break_word">${d.nombre}</td>
             <td class="td_break_word">${d.precio}</td>
             <td>
-              <button class="btn btn-warning" onclick='preEdit("${d.id}","${d.nombre}","${d.precio}")' data-bs-toggle="modal"  data-bs-target="#exampleModal"><i class="bi bi-pencil-fill"></i> Editar</button>
+              <button class="btn btn-warning btn-editar_lista" onclick='preEdit("${d.id}","${d.nombre}","${d.precio}")' data-bs-toggle="modal"  data-bs-target="#exampleModal"><i class="bi bi-pencil-fill "></i> Editar</button>
             </td>
             <td>
-            <button class="btn btn-danger" onclick='eliminar("${d.id}")'><i class="bi bi-trash-fill"></i> Eliminar</button>
+            <button class="btn btn-danger btn-eliminar_lista" onclick='eliminar("${d.id}")'><i class="bi bi-trash-fill"></i> Eliminar</button>
             </td>
           </tr>
           `);

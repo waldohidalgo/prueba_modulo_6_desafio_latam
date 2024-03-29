@@ -41,3 +41,15 @@ form {
   font-weight: 700;
   text-decoration: underline;
 }
+
+table {
+  width: 100% !important;
+  @media screen and (min-width: 468px) {
+    width: 50% !important;
+  }
+}
+
+.btn-editar_lista,
+.btn-eliminar_lista {
+  width: max-content;
+}

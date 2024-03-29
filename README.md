@@ -257,3 +257,28 @@ function eliminarDeporte(req, res) {
   });
 }
 ```
+
+### ¡¡EXTRA!!: Eliminación de archivo deportes.json cada 5 minutos
+
+Cada 5 minutos se borra el archivo **deportes.json** y si no existe dicho archivo entonces se muestra en consola un mensaje de esta acción:
+
+```js
+function eliminarArchivosDeCarpeta() {
+  const rutaArchivo = path.join(__dirname, "..", "deportes.json");
+  fs.access(rutaArchivo, fs.constants.R_OK && fs.constants.W_OKs, (err) => {
+    if (err) {
+      console.error("No es posible acceder al archivo deportes.json");
+    } else {
+      fs.unlink(rutaArchivo, (err) => {
+        if (err) {
+          console.error("Error al eliminar el archivo:", err);
+        } else {
+          console.log("Archivo eliminado:", rutaArchivo);
+        }
+      });
+    }
+  });
+}
+
+setInterval(eliminarArchivosDeCarpeta, 5 * 60 * 1000);
+```

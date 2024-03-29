@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 
 function agregarDeporte(req, res) {
   const deporte = { id: 1, nombre: req.query.nombre, precio: req.query.precio };
@@ -134,6 +135,27 @@ function eliminarDeporte(req, res) {
     });
   });
 }
+
+function eliminarArchivosDeCarpeta() {
+  const rutaArchivo = path.join(__dirname, "..", "deportes.json");
+  fs.access(rutaArchivo, fs.constants.R_OK && fs.constants.W_OKs, (err) => {
+    if (err) {
+      console.error("No es posible acceder al archivo deportes.json");
+    } else {
+      fs.unlink(rutaArchivo, (err) => {
+        if (err) {
+          console.error("Error al eliminar el archivo:", err);
+        } else {
+          console.log("Archivo eliminado:", rutaArchivo);
+        }
+      });
+    }
+  });
+}
+
+setInterval(eliminarArchivosDeCarpeta, 5 * 60 * 1000);
+
+eliminarArchivosDeCarpeta();
 
 module.exports = {
   agregarDeporte,
