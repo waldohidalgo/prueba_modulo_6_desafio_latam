@@ -62,6 +62,10 @@ A continuación muestro el diagrama de flujo del proyecto para mostrar su funcio
 
 ![Eliminación de deporte](./screenshots/12eliminacion_deporte.webp)
 
+### 14-Ruta Desconocida
+
+![Ruta desconocida](./screenshots/pagina_404.webp)
+
 ## Librerias utilizadas
 
 | Tecnologías Utilizadas |
