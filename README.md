@@ -4,6 +4,7 @@ Repositorio con el código solución a la prueba con la que se finaliza el módu
 
 - [Solución a la prueba Club deportivo](#solución-a-la-prueba-club-deportivo)
   - [Requisitos](#requisitos)
+  - [Librerias utilizadas](#librerias-utilizadas)
   - [Proyecto Finalizado: Diagrama de Flujo](#proyecto-finalizado-diagrama-de-flujo)
     - [1-Página de Inicio](#1-página-de-inicio)
     - [2- Página para crear,editar y eliminar deportes](#2--página-para-creareditar-y-eliminar-deportes)
@@ -19,7 +20,6 @@ Repositorio con el código solución a la prueba con la que se finaliza el módu
     - [12-Lectura de deporte editado](#12-lectura-de-deporte-editado)
     - [13-Eliminación de deporte exitosa](#13-eliminación-de-deporte-exitosa)
     - [14-Ruta Desconocida](#14-ruta-desconocida)
-  - [Librerias utilizadas](#librerias-utilizadas)
   - [Soluciones](#soluciones)
     - [1.Crear una ruta que reciba el nombre y precio de un nuevo deporte, lo persista en un archivo JSON (3 Puntos)](#1crear-una-ruta-que-reciba-el-nombre-y-precio-de-un-nuevo-deporte-lo-persista-en-un-archivo-json-3-puntos)
     - [2.Crear una ruta que al consultarse devuelva en formato JSON todos los deportes registrados (2 Puntos)](#2crear-una-ruta-que-al-consultarse-devuelva-en-formato-json-todos-los-deportes-registrados-2-puntos)
@@ -30,6 +30,17 @@ Repositorio con el código solución a la prueba con la que se finaliza el módu
 ## Requisitos
 
 ![Requisitos](./screenshots/requisitos_prueba.webp)
+
+## Librerias utilizadas
+
+| Tecnologías Utilizadas |
+| ---------------------- |
+| Express                |
+| Express-handlebars     |
+| Bootstrap              |
+| JQuery                 |
+| Axios                  |
+| Bootstrap-icons        |
 
 ## Proyecto Finalizado: Diagrama de Flujo
 
@@ -90,17 +101,6 @@ A continuación muestro el diagrama de flujo del proyecto para mostrar su funcio
 ### 14-Ruta Desconocida
 
 ![Ruta desconocida](./screenshots/pagina_404.webp)
-
-## Librerias utilizadas
-
-| Tecnologías Utilizadas |
-| ---------------------- |
-| Express                |
-| Express-handlebars     |
-| Bootstrap              |
-| JQuery                 |
-| Axios                  |
-| Bootstrap-icons        |
 
 ## Soluciones
 
